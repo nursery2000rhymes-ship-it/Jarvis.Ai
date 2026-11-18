@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050d1c"><meta name="description" content="J.A.R.V.I.S. personal voice assistant">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./style.css"><title>J.A.R.V.I.S. — Stark Interface</title>
+</head>
+<body>
+<div class="grid-bg"></div>
+<header class="topbar">
+  <div class="brand"><span class="status-dot"></span><div><small>STARK INDUSTRIES // PERSONAL ASSISTANT</small><h1>J.A.R.V.I.S.</h1></div></div>
+  <div class="top-status"><span id="network">NETWORK CHECK</span><span id="clock">--:--:--</span></div>
+</header>
+<main>
+  <section class="dashboard">
+    <div class="metric"><small>SYSTEM STATUS</small><strong id="systemStatus">ONLINE</strong></div>
+    <div class="metric"><small>VOICE LINK</small><strong id="voiceStatus">STANDBY</strong></div>
+    <div class="metric"><small>CORE TEMP</small><strong>NORMAL</strong></div>
+    <div class="metric"><small>POWER</small><strong>100%</strong></div>
+  </section>
+  <section class="core-panel">
+    <div class="eyebrow">NEURAL INTERFACE <span> // SECURE CHANNEL</span></div>
+    <button class="reactor" id="talkBtn" aria-label="Tap to speak"><span class="ring ring-a"></span><span class="ring ring-b"></span><span class="ring ring-c"></span><span class="core">J</span></button>
+    <div class="prompt" id="prompt">◈ TAP THE ARC REACTOR TO SPEAK ◈</div>
+    <div class="controls">
+      <button class="control primary" id="listenBtn">START LISTENING</button>
+      <button class="control" id="stopBtn">STOP</button>
+      <button class="control" id="clearBtn">CLEAR LOG</button>
+    </div>
+  </section>
+  <section class="chat-panel">
+    <div class="panel-heading"><div><small>COMMUNICATION LOG</small><h2>J.A.R.V.I.S. <span>LIVE SESSION</span></h2></div><span class="secure">● ENCRYPTED LINK</span></div>
+    <div id="log" class="log" aria-live="polite"><article class="message assistant"><b>J.A.R.V.I.S.</b><p>Good evening. All systems are standing by. How may I assist you?</p></article></div>
+    <form id="chatForm" class="chat-form"><input id="userInput" autocomplete="off" placeholder="Give me a command..." aria-label="Message"><button type="submit">SEND ↗</button></form>
+  </section>
+  <section class="settings">
+    <div class="panel-heading"><div><small>PERSONAL CONFIGURATION</small><h2>VOICE & SYSTEM</h2></div></div>
+    <div class="settings-grid">
+      <label>LANGUAGE<select id="language"><option value="en-IN">English (India)</option><option value="hi-IN">हिन्दी (India)</option><option value="auto">Auto / match input</option></select></label>
+      <label>VOICE<select id="voiceSelect"><option value="">System default</option></select></label>
+      <label>VOICE SPEED<input id="rate" type="range" min=".75" max="1.15" step=".05" value=".9"></label>
+      <label>VOICE PITCH<input id="pitch" type="range" min=".7" max="1.2" step=".05" value=".85"></label>
+    </div>
+    <p class="hint">Voice options depend on voices installed on your Android device. For Hindi speech, install Hindi voice data in your phone's text-to-speech settings.</p>
+  </section>
+</main>
+<footer>STARK SYSTEMS • PERSONAL BUILD • <span id="year"></span></footer>
+<script src="./config.js"></script><script src="./app.js"></script>
+</body></html>
